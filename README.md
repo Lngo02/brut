@@ -41,3 +41,7 @@ Run code on local
 ```
 npm run dev
 ```
+
+# Helpful Resources
+[Getting started with vite](https://vitejs.dev/guide/)
+[Getting started with vitest](https://eternaldev.com/blog/testing-a-react-application-with-vitest)
