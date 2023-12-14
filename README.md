@@ -29,7 +29,7 @@ export default {
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-# Running
+# Running on local
 
 Setup: 
 ```
@@ -37,11 +37,20 @@ cd brut
 npm install
 ```
 
-Run code on local
+Run:
 ```
 npm run dev
+```
+
+For the Spotify API, there are secrets you need for it. These are not included in the git repo for security reasons.
+You will need a `.env.local` file in the root directory. Note that ENV variables need to be prefixed with `VITE_` to be exposed to Vite-processed code. See https://vitejs.dev/guide/env-and-mode.html#env-files. 
+```
+VITE_CLIENT_ID='<your-client-id-here>'
 ```
 
 # Helpful Resources
 [Getting started with vite](https://vitejs.dev/guide/)
 [Getting started with vitest](https://eternaldev.com/blog/testing-a-react-application-with-vitest)
+[Spotify API](https://developer.spotify.com/documentation/web-api)
+[Spotify web app example/how-to](https://developer.spotify.com/documentation/web-api/howtos/web-app-profile)
+[What the useEffect is](https://legacy.reactjs.org/docs/hooks-effect.html)
