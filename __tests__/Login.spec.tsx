@@ -15,6 +15,6 @@ describe('Login healthcheck', () => {
         //      We should just test what we expect to see on the login.
         // (That is, on the screen, there is some text 'brut' that exists on the document)
         // Since this is just a health check, we only need to check that one expected thing is rendered.
-        expect(screen.getByText(/Brut/)).toBeInTheDocument(); // We could also do toBeDefined() see https://eternaldev.com/blog/testing-a-react-application-with-vitest
+        expect(screen.getByText(/Brut/)).toBeInTheDocument();
     });
 });
