@@ -3,7 +3,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import App from '../src/components/App';
-import { Children } from 'react';
 
 describe('App healthcheck', () => {
     it('SHOULD render successfully when there isnt a token',  () => {

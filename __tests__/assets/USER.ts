@@ -1,6 +1,6 @@
 import { IUser } from "../../src/interfaces/User";
 
-export const User: IUser = {
+export const USER: IUser = {
     "country": "string",
     "display_name": "string",
     "email": "string",
