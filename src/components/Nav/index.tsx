@@ -1,6 +1,11 @@
 import { redirectToAuthCodeFlow } from "../../auth";
+import { IUser } from "../../interfaces/User";
 
-const Nav = ({profile}) => {
+interface NavProps {
+    profile?: IUser | null; // User Profile
+}
+
+const Nav = ({profile}:NavProps) => {
 
     const clientId = import.meta.env.VITE_CLIENT_ID;
 
@@ -15,7 +20,7 @@ const Nav = ({profile}) => {
                 <button onClick={handleClick}>Login</button>
             ) : (
                 // Render image of profile
-                <img src={profile}></img>
+                <img src={profile.images[0].url}></img>
             )}
             
         </>

@@ -4,13 +4,13 @@ import TrackInfo from '../TrackInfo/index';
 import { getAccessToken } from '../../auth';
 import axios from 'axios';
 import Nav from '../Nav';
+import { IUser } from '../../interfaces/User';
 
 function App() {
   // Check if logged in.
   const [token, setToken] = useState<string | null>(null);
   // Profile State (For the User image)
-  // TODO: Stretch goal, change this type to be IUser
-  const [profile, setProfile] = useState<string | null>(null);
+  const [profile, setProfile] = useState<IUser | null>(null);
 
   // Instantiating variables for use with spotify api auth
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -46,15 +46,13 @@ function App() {
   // Get the Users Info
   const getUserInfo = async () => {
     // Axios Response with data of type IUser
-    const { data } =  await axios.get('https://api.spotify.com/v1/me', {
+    const { data } =  await axios.get<IUser>('https://api.spotify.com/v1/me', {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       }
     });
-    // console.log(data);
-    // TODO: Change this to be the whole user
-    setProfile(data.images[0].url);
+    setProfile(data);
   }
 
   if (!token) {
