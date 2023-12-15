@@ -6,6 +6,7 @@ import axios from 'axios';
 import Nav from '../Nav';
 import { IUser } from '../../interfaces/User';
 import { GlobalStyle } from '../../styles';
+import { Container, TrackViewer, Side } from './styles';
 
 function App() {
   // Global styles
@@ -73,7 +74,12 @@ function App() {
         <Nav 
           profile={profile}
         />
-        <TrackInfo/>
+        <Container>
+          <TrackViewer>
+            <TrackInfo/>
+          </TrackViewer>
+          <Side/>
+        </Container>
       </>
     )
   }
