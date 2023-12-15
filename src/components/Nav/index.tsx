@@ -1,13 +1,13 @@
 import { redirectToAuthCodeFlow } from "../../auth";
 import { IUser } from "../../interfaces/User";
 
-interface NavProps {
-    profile?: IUser | null; // User Profile
+interface IProps {
+    profile?: IUser; // User Profile
 }
 
-const Nav = ({profile}:NavProps) => {
+const Nav = ({profile}:IProps) => {
 
-    const clientId = import.meta.env.VITE_CLIENT_ID;
+    const clientId: string = import.meta.env.VITE_CLIENT_ID;
 
     const handleClick = async () => {
         await redirectToAuthCodeFlow(clientId);
