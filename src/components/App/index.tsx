@@ -5,8 +5,12 @@ import { getAccessToken } from '../../auth';
 import axios from 'axios';
 import Nav from '../Nav';
 import { IUser } from '../../interfaces/User';
+import { GlobalStyle } from '../../styles';
 
 function App() {
+  // Global styles
+  const GlobalStyleProxy:any = GlobalStyle;
+
   // Check if logged in.
   const [token, setToken] = useState<string | null>(null);
   // Profile State (For the User image)
@@ -58,12 +62,14 @@ function App() {
   if (!token) {
     return (
       <>
+        <GlobalStyleProxy/>
         <Login/>
       </>
     );
   } else {
     return (
       <>
+        <GlobalStyleProxy/>
         <Nav 
           profile={profile}
         />

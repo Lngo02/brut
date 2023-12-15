@@ -1,11 +1,8 @@
 import { redirectToAuthCodeFlow } from "../../auth";
-import { IUser } from "../../interfaces/User";
+import { INavProps } from "../../interfaces/NavProps";
+import { Profile, Button, H1, Navbar } from "./styles";
 
-interface IProps {
-    profile?: IUser; // User Profile
-}
-
-const Nav = ({profile}:IProps) => {
+const Nav = ({profile}:INavProps) => {
 
     const clientId: string = import.meta.env.VITE_CLIENT_ID;
 
@@ -15,14 +12,18 @@ const Nav = ({profile}:IProps) => {
 
     return (
         <>
-            <h1>Brut</h1>
-            {!profile ? (
-                <button onClick={handleClick}>Login</button>
-            ) : (
-                // Render image of profile
-                <img src={profile.images[0].url}></img>
-            )}
-            
+            <Navbar>
+                <H1>Brut</H1>
+                {!profile ? (
+                    <Button onClick={handleClick}>Login</Button>
+                ) : (
+                    // Render image of profile
+                    // Profile is defined as a styled <img>
+                    <Profile
+                        profile={profile}
+                    />
+                )}
+            </Navbar>
         </>
     )
 }
