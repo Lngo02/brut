@@ -2,10 +2,15 @@ import { useEffect, useState } from 'react';
 import Login from '../Login';
 import TrackInfo from '../TrackInfo/index';
 import { getAccessToken } from '../../auth';
+import axios from 'axios';
+import Nav from '../Nav';
 
 function App() {
   // Check if logged in.
   const [token, setToken] = useState<string | null>(null);
+  // Profile State (For the User image)
+  // TODO: Stretch goal, change this type to be IUser
+  const [profile, setProfile] = useState<string | null>(null);
 
   // Instantiating variables for use with spotify api auth
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -13,32 +18,58 @@ function App() {
   const code = params.get("code");
 
   // Every time the app component renders, we check if there is the token.
-  // 'Effect' refers to the function that needs to run after component render
+  // 'Effect' (or Side Effects) refers to the function that needs to run after component render
+  // E.g. fetching data, directly updating the DOM, timers
+  // userEffect(<function>, <dependency>)
+  // No dependency passed => runs on every render
+  // Empty array [] dependency => runs only on the first render
+  // [prop, state] => Runs on the first render and any time any dependency value changes
+  // So, we only want this to run if token has changed (in case token changes after first time)
   useEffect(() => {
     if (!token) {
       getToken();
     }
-  });
+    if (token) {
+      getUserInfo();
+    }
+  }, [token]);
 
   const getToken = async () => {
     // If there is a code, we can get the token.
     if (code) {
       const accessToken = await getAccessToken(clientId, code);
       setToken(accessToken);
+      console.log(accessToken);
     }
   }
 
+  // Get the Users Info
+  const getUserInfo = async () => {
+    // Axios Response with data of type IUser
+    const { data } =  await axios.get('https://api.spotify.com/v1/me', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      }
+    });
+    // console.log(data);
+    // TODO: Change this to be the whole user
+    setProfile(data.images[0].url);
+  }
 
   if (!token) {
     return (
       <>
-        <Login></Login>
+        <Login/>
       </>
     );
   } else {
     return (
       <>
-        <TrackInfo></TrackInfo>
+        <Nav 
+          profile={profile}
+        />
+        <TrackInfo/>
       </>
     )
   }

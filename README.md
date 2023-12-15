@@ -54,3 +54,6 @@ VITE_CLIENT_ID='<your-client-id-here>'
 [Spotify API](https://developer.spotify.com/documentation/web-api)
 [Spotify web app example/how-to](https://developer.spotify.com/documentation/web-api/howtos/web-app-profile)
 [What the useEffect is](https://legacy.reactjs.org/docs/hooks-effect.html)
+[TS doc recommends interface](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+[More interfaces vs. types](https://www.codecademy.com/learn/learn-typescript/modules/learn-typescript-advanced-object-types/cheatsheet)
+[This doc recomments Type](https://www.totaltypescript.com/type-vs-interface-which-should-you-use)
