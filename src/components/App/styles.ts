@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const BACKGROUND_COLOR:string = '#fff';
+
 export const Container = styled.div`
     display: flex;
     justify-content: space-between;
@@ -13,7 +15,7 @@ export const TrackViewer = styled.div`
     diplay: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: #fff;
+    background: ${BACKGROUND_COLOR};
     min-width: 70vw;
 `;
 
@@ -25,5 +27,5 @@ export const Side = styled.div`
     position: sticky;
     border-left: 2px solid #000;
     padding: 0px 10px;
-    background: #fff;
+    background: ${BACKGROUND_COLOR};
 `;

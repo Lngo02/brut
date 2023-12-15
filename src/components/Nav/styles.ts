@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { INavProps } from '../../interfaces/NavProps';
+import { BACKGROUND_COLOR } from '../App/styles';
 
 export const Navbar = styled.header`
     width: 100vw;
@@ -7,7 +8,7 @@ export const Navbar = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #ffffff;
+    background: ${BACKGROUND_COLOR};
     border-bottom: 2px solid #000;
     padding: 1em 1em 1em 0;
     box-sizing: border-box;
