@@ -7,6 +7,7 @@ import Nav from '../Nav';
 import { IUser } from '../../interfaces/User';
 import { GlobalStyle } from '../../styles';
 import { Container, TrackViewer, Side } from './styles';
+import Sidebar from '../Sidebar';
 
 function App() {
   // Global styles
@@ -16,6 +17,8 @@ function App() {
   const [token, setToken] = useState<string | null>(null);
   // Profile State (For the User image)
   const [profile, setProfile] = useState<IUser | null>(null);
+  // Playlist State
+  const [playlists, setPlaylists] = useState<Array<string>>([]);
 
   // Instantiating variables for use with spotify api auth
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -36,6 +39,7 @@ function App() {
     }
     if (token) {
       getUserInfo();
+      getPlaylists();
     }
   }, [token]);
 
@@ -60,6 +64,21 @@ function App() {
     setProfile(data);
   }
 
+  // Get user playlists
+  const getPlaylists = async () => {
+    const { data } =  await axios.get('https://api.spotify.com/v1/me/playlists', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      }
+    });
+    // Data processing for only the needed data.
+    const playlists = data.items.map(({name, id}:{name: String, id: number}) => {
+      return {name, id};
+    });
+    setPlaylists(playlists);
+  }
+
   if (!token) {
     return (
       <>
@@ -78,7 +97,11 @@ function App() {
           <TrackViewer>
             <TrackInfo/>
           </TrackViewer>
-          <Side/>
+          <Side>
+            <Sidebar
+              playlists={playlists}
+            />
+          </Side>
         </Container>
       </>
     )

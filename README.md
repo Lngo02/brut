@@ -57,3 +57,4 @@ VITE_CLIENT_ID='<your-client-id-here>'
 [TS doc recommends interface](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
 [More interfaces vs. types](https://www.codecademy.com/learn/learn-typescript/modules/learn-typescript-advanced-object-types/cheatsheet)
 [This doc recomments Type](https://www.totaltypescript.com/type-vs-interface-which-should-you-use)
+[Using the React Select](https://react-select.com/home)
