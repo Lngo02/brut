@@ -31,6 +31,28 @@ const Sidebar = ({playlists, getTracks}:ISidebarProps) => {
                 getOptionLabel={(e:any)=>e.name}
                 styles={styles}
                 onChange={handleChange}
+                theme={(theme) => ({
+                    ...theme,
+                    borderRadius: 0,
+                    colors: {
+                      ...theme.colors,
+                      primary: 'black',
+                      primary25: 'grey',
+                      primary50: 'grey',
+                      primary75: 'black',
+                      neutral0: 'white',
+                      neutral5: 'white',
+                      neutral10: 'white',
+                      neutral20: 'black',
+                      neutral30: 'black',
+                      neutral40: 'white',
+                      neutral50: 'black',
+                      neutral60: 'black',
+                      neutral70: 'white',
+                      neutral80: 'black',
+                      neutral90: 'white',
+                    },
+                  })}
             />
         </>
     )
