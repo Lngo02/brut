@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import { ISidebarProps } from '../../interfaces/SidebarProps';
 
-const Sidebar = ({playlists}:ISidebarProps) => {
+const Sidebar = ({playlists, getTracks}:ISidebarProps) => {
    
     // Style the react-select
     const styles = {
@@ -21,7 +21,7 @@ const Sidebar = ({playlists}:ISidebarProps) => {
     }
 
     const handleChange = ((e:any) => {
-        console.log(e);
+        getTracks(e.id);
     })
 
     return (

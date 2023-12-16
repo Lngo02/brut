@@ -79,6 +79,18 @@ function App() {
     setPlaylists(playlists);
   }
 
+  // Get tracks in playlist (Playlist items)
+  // https://developer.spotify.com/documentation/web-api/reference/get-playlists-tracks
+  const getTracks = async (playlist_id: string) => {
+    const { data } =  await axios.get(`https://api.spotify.com/v1/playlists/${playlist_id}/tracks`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      }
+    });
+    console.log(data);
+  }
+
   if (!token) {
     return (
       <>
@@ -100,6 +112,7 @@ function App() {
           <Side>
             <Sidebar
               playlists={playlists}
+              getTracks={getTracks}
             />
           </Side>
         </Container>
