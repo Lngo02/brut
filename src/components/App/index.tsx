@@ -4,10 +4,11 @@ import TrackInfo from '../TrackInfo/index';
 import { getAccessToken } from '../../auth';
 import axios from 'axios';
 import Nav from '../Nav';
-import { IUser } from '../../interfaces/User';
+import { IUser } from '../../interfaces/Spotify/User';
 import { GlobalStyle } from '../../styles';
 import { Container, TrackViewer, Side } from './styles';
 import Sidebar from '../Sidebar';
+import { IPlaylistTrackObject } from '../../interfaces/Spotify/PlaylistTrackObject';
 
 function App() {
   // Global styles
@@ -18,7 +19,9 @@ function App() {
   // Profile State (For the User image)
   const [profile, setProfile] = useState<IUser | null>(null);
   // Playlist State
-  const [playlists, setPlaylists] = useState<Array<string>>([]);
+  const [playlists, setPlaylists] = useState<string[]>([]);
+  // Tracks in playlist
+  const [tracks, setTracks] = useState<string[]>([]);
 
   // Instantiating variables for use with spotify api auth
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -88,7 +91,12 @@ function App() {
         "Content-Type": "application/json",
       }
     });
+    const tracks = data.items.map(({track}:IPlaylistTrackObject) => {
+      return track.uri;
+    })
     console.log(data);
+    console.log(tracks);
+    setTracks(tracks);
   }
 
   if (!token) {
@@ -112,6 +120,7 @@ function App() {
           <Side>
             <Sidebar
               token={token}
+              tracks={tracks}
               playlists={playlists}
               getTracks={getTracks}
             />

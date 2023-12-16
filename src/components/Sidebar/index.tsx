@@ -2,7 +2,7 @@ import Select from 'react-select';
 import { ISidebarProps } from '../../interfaces/SidebarProps';
 import Controls from '../Controls';
 
-const Sidebar = ({token,playlists, getTracks}:ISidebarProps) => {
+const Sidebar = ({token, tracks, playlists, getTracks}:ISidebarProps) => {
    
     // Style the react-select
     const styles = {
@@ -29,7 +29,7 @@ const Sidebar = ({token,playlists, getTracks}:ISidebarProps) => {
         <>
             <Controls
                 token={token}
-                tracks={[]}
+                tracks={tracks}
             />
             <Select
                 options={playlists}

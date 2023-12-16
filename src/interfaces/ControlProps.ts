@@ -3,6 +3,6 @@
  */
 
 export interface IControlProps {
-    token: string | null;
-    tracks: Array<string>;
+    token: string;
+    tracks: string[];
 }

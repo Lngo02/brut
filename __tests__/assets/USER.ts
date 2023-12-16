@@ -1,4 +1,4 @@
-import { IUser } from "../../src/interfaces/User";
+import { IUser } from "../../src/interfaces/Spotify/User";
 
 export const USER: IUser = {
     "country": "string",

@@ -3,7 +3,8 @@
  */
 
 export interface ISidebarProps {
-    token: string | null;
-    playlists: Array<string>;
+    token: string;
+    tracks: string[];
+    playlists: string[];
     getTracks: any; // For now, we are just passing down the things because its a small enough app.
 }

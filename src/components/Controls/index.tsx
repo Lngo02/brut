@@ -9,7 +9,6 @@ const Controls = ({token, tracks}: IControlProps) => {
                 uris={tracks}
             />
         </>
-        
     )
 }
 
