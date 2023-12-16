@@ -7,6 +7,9 @@ const Controls = ({token, tracks}: IControlProps) => {
             <SpotifyPlayer
                 token={token}
                 uris={tracks}
+                hideCoverArt={true}
+                hideAttribution={true}
+                inlineVolume={false}
             />
         </>
     )
