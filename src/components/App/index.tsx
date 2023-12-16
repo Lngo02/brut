@@ -111,6 +111,7 @@ function App() {
           </TrackViewer>
           <Side>
             <Sidebar
+              token={token}
               playlists={playlists}
               getTracks={getTracks}
             />

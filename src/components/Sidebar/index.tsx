@@ -1,7 +1,8 @@
 import Select from 'react-select';
 import { ISidebarProps } from '../../interfaces/SidebarProps';
+import Controls from '../Controls';
 
-const Sidebar = ({playlists, getTracks}:ISidebarProps) => {
+const Sidebar = ({token,playlists, getTracks}:ISidebarProps) => {
    
     // Style the react-select
     const styles = {
@@ -26,6 +27,10 @@ const Sidebar = ({playlists, getTracks}:ISidebarProps) => {
 
     return (
         <>
+            <Controls
+                token={token}
+                tracks={[]}
+            />
             <Select
                 options={playlists}
                 getOptionLabel={(e:any)=>e.name}
