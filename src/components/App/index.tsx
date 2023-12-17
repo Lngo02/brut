@@ -9,6 +9,7 @@ import { GlobalStyle } from '../../styles';
 import { Container, TrackViewer, Side } from './styles';
 import Sidebar from '../Sidebar';
 import { IPlaylistTrackObject } from '../../interfaces/Spotify/PlaylistTrackObject';
+import { ITrack } from '../../types';
 
 function App() {
   // Global styles
@@ -22,6 +23,8 @@ function App() {
   const [playlists, setPlaylists] = useState<string[]>([]);
   // Tracks in playlist
   const [tracks, setTracks] = useState<string[]>([]);
+  // State from controls
+  const [track, setTrack] = useState<ITrack | null>(null);
 
   // Instantiating variables for use with spotify api auth
   const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -119,10 +122,12 @@ function App() {
           </TrackViewer>
           <Side>
             <Sidebar
+              track={track}
               token={token}
               tracks={tracks}
               playlists={playlists}
               getTracks={getTracks}
+              setTrack={setTrack}
             />
           </Side>
         </Container>
