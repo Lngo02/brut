@@ -115,7 +115,9 @@ function App() {
         />
         <Container>
           <TrackViewer>
-            <TrackInfo/>
+            <TrackInfo
+              track={track}
+            />
           </TrackViewer>
           <Side>
             <Sidebar

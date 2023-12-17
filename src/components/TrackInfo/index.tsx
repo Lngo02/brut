@@ -2,10 +2,16 @@
  * Render if user has successfully logged in.
  */
 
-const TrackInfo = () => {
+import { IProps } from "../../interfaces";
+import { H1 } from "./styles";
+
+const TrackInfo = ({track}:IProps) => {
+
+    if (!track || track.id === '') return null;
+
     return (
         <>
-            <h1>Hello authorized user</h1>
+            <H1>{track.name}</H1>
         </>
     )
 };
