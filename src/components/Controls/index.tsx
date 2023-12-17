@@ -1,8 +1,8 @@
 import SpotifyPlayer from "react-spotify-web-playback";
-import { IControlProps } from "../../interfaces/ControlProps";
 import { IState } from "../../types";
+import { IProps } from "../../interfaces";
 
-const Controls = ({token, tracks, setTrack}: IControlProps) => {
+const Controls = ({token, tracks, setTrack}: IProps) => {
     return (
         <>
             <SpotifyPlayer

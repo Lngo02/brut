@@ -3,19 +3,18 @@
  * https://developer.spotify.com/documentation/web-api/reference/get-track
  */
 
-import { IImageObject } from "./ImageObject";
+import { ImageObject } from "./ImageObject";
 
-export interface IPlaylistTrackObject {
-    track: ITrackObject; // TODO: Could also be an Episode Object
+export interface PlaylistTrackObject {
+    track: TrackObject; // TODO: Could also be an Episode Object
 }
 
-
-export interface ITrackObject {
-    album: IAlbum[];
+export interface TrackObject {
+    album: Album[];
     uri: string; 
 }
 
-interface IAlbum {
+interface Album {
     album_type: 'album' | 'single' | 'compilation';
     total_tracks: number;
     available_markets: string[];
@@ -24,7 +23,7 @@ interface IAlbum {
     };
     href: string;
     id: string;
-    images: IImageObject[];
+    images: ImageObject[];
     name: string;
     release_date: string;
     release_date_precision: 'year' | 'month' | 'day';

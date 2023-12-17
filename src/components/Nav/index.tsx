@@ -1,8 +1,8 @@
 import { redirectToAuthCodeFlow } from "../../auth";
-import { INavProps } from "../../interfaces/NavProps";
+import { IProps } from "../../interfaces";
 import { Profile, Button, H1, Navbar } from "./styles";
 
-const Nav = ({profile}:INavProps) => {
+const Nav = ({profile}:IProps) => {
 
     const clientId: string = import.meta.env.VITE_CLIENT_ID;
 

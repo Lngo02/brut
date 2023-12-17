@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { INavProps } from '../../interfaces/NavProps';
 import { BACKGROUND_COLOR } from '../App/styles';
+import { IProps } from '../../interfaces';
 
 export const Navbar = styled.header`
     width: 100vw;
@@ -22,7 +22,7 @@ export const H1 = styled.h1`
     margin-left: 0.5em;
 `;
 
-export const Profile = styled.image<INavProps>`
+export const Profile = styled.image<IProps>`
     border: 2px solid #000;
     background-image: ${props => `url(${props.profile?.images[0].url})`};
     width: 3em;

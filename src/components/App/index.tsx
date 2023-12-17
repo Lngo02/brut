@@ -4,12 +4,11 @@ import TrackInfo from '../TrackInfo/index';
 import { getAccessToken } from '../../auth';
 import axios from 'axios';
 import Nav from '../Nav';
-import { IUser } from '../../interfaces/Spotify/User';
 import { GlobalStyle } from '../../styles';
 import { Container, TrackViewer, Side } from './styles';
 import Sidebar from '../Sidebar';
-import { IPlaylistTrackObject } from '../../interfaces/Spotify/PlaylistTrackObject';
 import { ITrack } from '../../types';
+import { ISpotify } from '../../interfaces';
 
 function App() {
   // Global styles
@@ -18,7 +17,7 @@ function App() {
   // Check if logged in.
   const [token, setToken] = useState<string | null>(null);
   // Profile State (For the User image)
-  const [profile, setProfile] = useState<IUser | null>(null);
+  const [profile, setProfile] = useState<ISpotify.User | null>(null);
   // Playlist State
   const [playlists, setPlaylists] = useState<string[]>([]);
   // Tracks in playlist
@@ -61,7 +60,7 @@ function App() {
   // Get the Users Info
   const getUserInfo = async () => {
     // Axios Response with data of type IUser
-    const { data } =  await axios.get<IUser>('https://api.spotify.com/v1/me', {
+    const { data } =  await axios.get<ISpotify.User>('https://api.spotify.com/v1/me', {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
@@ -94,11 +93,9 @@ function App() {
         "Content-Type": "application/json",
       }
     });
-    const tracks = data.items.map(({track}:IPlaylistTrackObject) => {
+    const tracks = data.items.map(({track}:ISpotify.PlaylistTrackObject) => {
       return track.uri;
     })
-    console.log(data);
-    console.log(tracks);
     setTracks(tracks);
   }
 

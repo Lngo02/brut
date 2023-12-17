@@ -2,7 +2,7 @@
  * Image Object
  */
 
-export interface IImageObject {
+export interface ImageObject {
     url: string,
     height: number;
     width: number;

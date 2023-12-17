@@ -3,9 +3,9 @@
  * https://developer.spotify.com/documentation/web-api/reference/get-current-users-profile
  */
 
-import { IImageObject } from "./ImageObject";
+import { ImageObject } from "./ImageObject";
 
-export interface IUser {
+export interface User {
     country?: string;
     display_name: string;
     email?: string;
@@ -22,7 +22,7 @@ export interface IUser {
     };
     href: string;
     id: string;
-    images: IImageObject[];
+    images: ImageObject[];
     product?: string;
     type: string;
     uri: string;
