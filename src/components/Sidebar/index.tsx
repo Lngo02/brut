@@ -1,6 +1,7 @@
 import Select from 'react-select';
 import { ISidebarProps } from '../../interfaces/SidebarProps';
 import Controls from '../Controls';
+import TrackImage from '../TrackImage';
 
 const Sidebar = ({token, tracks, playlists, getTracks, track, setTrack}:ISidebarProps) => {
    
@@ -59,6 +60,9 @@ const Sidebar = ({token, tracks, playlists, getTracks, track, setTrack}:ISidebar
                       neutral90: 'white',
                     },
                   })}
+            />
+            <TrackImage
+                track={track}
             />
         </>
     )

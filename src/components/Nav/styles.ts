@@ -22,7 +22,11 @@ export const H1 = styled.h1`
     margin-left: 0.5em;
 `;
 
-export const Profile = styled.image<IProps>`
+interface IProfileProps {
+    profile: string;
+}
+
+export const Profile = styled.image<IProfileProps>`
     border: 2px solid #000;
     background-image: ${props => `url(${props.profile?.images[0].url})`};
     width: 3em;
