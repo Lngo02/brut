@@ -3,7 +3,7 @@
  */
 
 import { IProps } from "../../interfaces";
-import { H1 } from "./styles";
+import { H1, TickerContent, TickerWrapper } from "./styles";
 
 const TrackInfo = ({track}:IProps) => {
 
@@ -12,6 +12,9 @@ const TrackInfo = ({track}:IProps) => {
     return (
         <>
             <H1>{track.name}</H1>
+            <TickerWrapper>
+                <TickerContent>track artist</TickerContent>
+            </TickerWrapper>
         </>
     )
 };
