@@ -22,6 +22,12 @@ export const H1 = styled.h1`
     margin-left: 0.5em;
     text-transform: uppercase;
     font-weight: bold;
+
+    @media(max-width: 800px) {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        font-size: 2em;
+    }
 `;
 
 interface IProfileProps {

@@ -7,4 +7,9 @@ export const ControlContainer = styled.div`
     justify-content: start;
     flex-grow: 1;
     margin-top: 1vh;
+    
+    @media (max-width: 800px) {
+        justify-content: end;
+    }
+
 `

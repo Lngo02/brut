@@ -37,6 +37,7 @@ const Sidebar = ({token, tracks, playlists, getTracks, track, setTrack}:ISidebar
                 />
                 <Select
                     options={playlists}
+                    menuPlacement='auto'
                     getOptionLabel={(e:any)=>e.name}
                     styles={styles}
                     onChange={handleChange}
