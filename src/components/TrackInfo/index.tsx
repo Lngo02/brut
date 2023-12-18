@@ -3,11 +3,14 @@
  */
 
 import { IProps } from "../../interfaces";
-import { H1, TickerContent, TickerWrapper } from "./styles";
+import { Circle, Container, H1, TickerContent, TickerWrapper, Text } from "./styles";
 
 const TrackInfo = ({track}:IProps) => {
 
     if (!track || track.id === '') return null;
+
+    // Main Artist name
+    const trackArtistRepeated = track.artists[0].name.length > 10 ? track.artists[0].name : (track.artists[0].name + ' ').repeat(Math.ceil(10/track.artists[0].name.length));
 
     // If theres more than one
     let trackArtist = track.artists[0].name;
@@ -16,10 +19,22 @@ const TrackInfo = ({track}:IProps) => {
             trackArtist += ', ' + track.artists[i].name;
         }
     }
-    console.log(track.artists);
 
     return (
         <>
+            <Container>
+                <Circle>
+                    {trackArtistRepeated.split('').map((char:string, index:number) => (
+                        <Text
+                            key={index}
+                            style={{
+                                transform: `rotate(${(360 / trackArtistRepeated.length) * index}deg) translate(0,-80px) rotate(-${(360 / trackArtistRepeated.length) * index}deg)`,
+                            }}>
+                            {char}
+                        </Text>
+                    ))}
+                </Circle>
+            </Container>
             <H1>{track.name}</H1>
             <TickerWrapper>
                 <TickerContent>{trackArtist}</TickerContent>
