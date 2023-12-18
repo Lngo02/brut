@@ -60,3 +60,4 @@ VITE_CLIENT_ID='<your-client-id-here>'
 [Using the React Select](https://react-select.com/home)
 [React spotify web playback: easier to use than spotify SDK](https://github.com/gilbarbara/react-spotify-web-playback)
 [Deploying web app](https://blog.logrocket.com/9-ways-deploy-react-app-free/)
+[Brut codebase tutorial inspo](https://github.com/samnixon87/brut)
