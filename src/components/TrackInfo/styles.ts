@@ -1,4 +1,13 @@
 import styled, { keyframes } from 'styled-components';
+import { BACKGROUND_COLOR } from '../App/styles';
+
+export const TrackDetails = styled.div`
+    min-width: 68vw;
+    display: flex;
+    justify-content: space-betwene;
+    margin: 0;
+    background-color: ${BACKGROUND_COLOR}
+`
 
 export const H1 = styled.h1`
     color: black;
@@ -27,7 +36,7 @@ export const TickerWrapper = styled.div`
     height: 3em;
     margin: 0;
     overflow: hidden;
-    align-text: bototm;
+    align-text: bottom;
 `
 
 /**

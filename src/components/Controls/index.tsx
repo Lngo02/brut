@@ -21,6 +21,7 @@ const Controls = ({token, tracks, setTrack}: IProps) => {
                 hideCoverArt={true}
                 hideAttribution={true}
                 inlineVolume={false}
+                layout={'compact'}
                 callback={ (state: IState) => {
                     // Local State
                     setTrack(state.track);

@@ -3,7 +3,7 @@
  */
 
 import { IProps } from "../../interfaces";
-import { Circle, Container, H1, TickerContent, TickerWrapper, Text } from "./styles";
+import { Circle, Container, H1, TickerContent, TickerWrapper, Text, TrackDetails } from "./styles";
 
 const TrackInfo = ({track}:IProps) => {
 
@@ -22,20 +22,22 @@ const TrackInfo = ({track}:IProps) => {
 
     return (
         <>
-            <Container>
-                <Circle>
-                    {trackArtistRepeated.split('').map((char:string, index:number) => (
-                        <Text
-                            key={index}
-                            style={{
-                                transform: `rotate(${(360 / trackArtistRepeated.length) * index}deg) translate(0,-80px) rotate(-${(360 / trackArtistRepeated.length) * index}deg)`,
-                            }}>
-                            {char}
-                        </Text>
-                    ))}
-                </Circle>
-            </Container>
-            <H1>{track.name}</H1>
+            <TrackDetails>
+                <Container>
+                    <Circle>
+                        {trackArtistRepeated.split('').map((char:string, index:number) => (
+                            <Text
+                                key={index}
+                                style={{
+                                    transform: `rotate(${(360 / trackArtistRepeated.length) * index}deg) translate(0,-80px) rotate(-${(360 / trackArtistRepeated.length) * index}deg)`,
+                                }}>
+                                {char}
+                            </Text>
+                        ))}
+                    </Circle>
+                </Container>
+                <H1>{track.name}</H1>
+            </TrackDetails>
             <TickerWrapper>
                 <TickerContent>{trackArtist}</TickerContent>
             </TickerWrapper>

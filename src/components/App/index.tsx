@@ -53,7 +53,6 @@ function App() {
     if (code) {
       const accessToken = await getAccessToken(clientId, code);
       setToken(accessToken);
-      console.log(accessToken);
     }
   }
 
