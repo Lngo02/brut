@@ -1,10 +1,10 @@
 import Select from 'react-select';
-import { ISidebarProps } from '../../interfaces/SidebarProps';
 import Controls from '../Controls';
 import TrackImage from '../TrackImage';
 import { ControlContainer } from './styles';
+import { IProps } from '../../interfaces';
 
-const Sidebar = ({token, tracks, playlists, getTracks, track, setTrack}:ISidebarProps) => {
+const Sidebar = ({token, tracks, playlists, getTracks, track, setTrack}:IProps) => {
    
     // Style the react-select
     const styles = {

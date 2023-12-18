@@ -1,6 +1,6 @@
-import { IUser } from "../../src/interfaces/Spotify/User";
+import { ISpotify } from "../../src/interfaces";
 
-export const USER: IUser = {
+export const USER: ISpotify.User = {
     "country": "string",
     "display_name": "string",
     "email": "string",

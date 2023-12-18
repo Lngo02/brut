@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { BACKGROUND_COLOR } from '../App/styles';
-import { IProps } from '../../interfaces';
+import { ISpotify } from '../../interfaces';
 
 export const Navbar = styled.header`
     width: 100vw;
@@ -31,7 +31,7 @@ export const H1 = styled.h1`
 `;
 
 interface IProfileProps {
-    profile: string;
+    profile: ISpotify.User;
 }
 
 export const Profile = styled.image<IProfileProps>`

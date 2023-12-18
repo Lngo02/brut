@@ -5,6 +5,8 @@ import { useState } from "react";
 
 const Controls = ({token, tracks, setTrack}: IProps) => {
     
+    if (!token || !tracks) return null;
+
     /**
      * Boolean state play, that indicates if somethin is played.
      * Controls playblack. 
@@ -23,6 +25,7 @@ const Controls = ({token, tracks, setTrack}: IProps) => {
                 inlineVolume={false}
                 layout={'compact'}
                 callback={ (state: IState) => {
+                    if (!state || !state.track || !setTrack) return;
                     // Local State
                     setTrack(state.track);
                     if (state.isPlaying) {
