@@ -61,3 +61,4 @@ VITE_CLIENT_ID='<your-client-id-here>'
 [React spotify web playback: easier to use than spotify SDK](https://github.com/gilbarbara/react-spotify-web-playback)
 [Deploying web app](https://blog.logrocket.com/9-ways-deploy-react-app-free/)
 [Brut codebase tutorial inspo](https://github.com/samnixon87/brut)
+[Stretch Goal - Make it a music player site](https://github.com/IdoBouskila/music-app/tree/master)
