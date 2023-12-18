@@ -59,3 +59,4 @@ VITE_CLIENT_ID='<your-client-id-here>'
 [This doc recomments Type](https://www.totaltypescript.com/type-vs-interface-which-should-you-use)
 [Using the React Select](https://react-select.com/home)
 [React spotify web playback: easier to use than spotify SDK](https://github.com/gilbarbara/react-spotify-web-playback)
+[Deploying web app](https://blog.logrocket.com/9-ways-deploy-react-app-free/)
