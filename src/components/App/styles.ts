@@ -28,6 +28,5 @@ export const Side = styled.div`
     min-width: 30vw;
     position: sticky;
     border-left: 2px solid #000;
-    padding: 0px 10px;
     background: ${BACKGROUND_COLOR};
 `;

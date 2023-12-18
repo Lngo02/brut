@@ -20,6 +20,8 @@ export const H1 = styled.h1`
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     margin-left: 0.5em;
+    text-transform: uppercase;
+    font-weight: bold;
 `;
 
 interface IProfileProps {

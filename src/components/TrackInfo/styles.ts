@@ -3,6 +3,7 @@ import { BACKGROUND_COLOR } from '../App/styles';
 
 export const TrackDetails = styled.div`
     min-width: 68vw;
+    min-height: 80vh;
     display: flex;
     justify-content: space-betwene;
     margin: 0;
